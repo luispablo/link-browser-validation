@@ -4,7 +4,8 @@
   "description": "Lightweight and no dependency module to Add browser validation to HTML anchor elements, via data attributes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "uglify": "uglifyjs -c -m -o dist/link-browser-validation.min.js src/link-browser-validation.js"
   },
   "repository": {
     "type": "git",
