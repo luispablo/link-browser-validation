@@ -29,9 +29,11 @@ If you want any link in your HTML to validate the user browser before allowing t
 </html>
 ```
 
+**IMPORTANT**: The ```script``` to include the JS file has to be in the end of the HTML body, as shown in the previous sample code.
+
 ### Blocking browser
 
-If you want to **prohibit** the navigation with certain browsers use the attribute ```data-browser-bock```. It will alert the user of the block set for the specified browsers, and won't continue to the link destination.
+If you want to **prohibit** the navigation with certain browsers use the attribute ```data-browser-block```. It will alert the user of the block set for the specified browsers, and won't continue to the link destination.
 
 ```html
   <a href="http://microsoft.com" target="_blank" data-browser-block="Chrome">
@@ -81,7 +83,7 @@ When alerting a user of an invalid browser, in any form of validation, the modul
 If you want to change the text, or use other language, you can make use of the ```data-browser-msg``` attribute.
 
 ```html
-  <a href="http://google.com" data-browser-block="MSIE" data-browser-msg="Non puoi usare Internet Explorer qui">
+  <a data-browser-block="MSIE" data-browser-msg="Non puoi usare Internet Explorer qui" href="http://google.com">
       Microsoft
   </a>
 ```
@@ -96,7 +98,8 @@ You may want to use a better alternative to such methods, a custom library to po
   ...
   <script src="./browser-validation.js"></script>
   <script>
-    // To override the handlers, alerting with another message, and leaving the real message in the console.
+    // To override the handlers, alerting with another message, and leaving the 
+    // real message in the console.
     window.lbValidation.handlers.doBlock = function (msg) {
       console.log(msg);
       alert("DON'T GO THERE!");
@@ -129,6 +132,8 @@ If you want to trigger this process again, you have to make a JS call:
 ```javascript
   window.lbValidation.prepareLinks();
 ```
+
+_And remember, as stated in the beginning of this document, that the ```script``` to include the JS file has to be located at the end of the HTML body._
 
 ## Author
 
