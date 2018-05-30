@@ -120,6 +120,16 @@ You may want to use a better alternative to such methods, a custom library to po
 ```
 Beware that when overriding the warning and confirm options, **you** are responsible for invoking the callback function, which will continue to the link original destination.
 
+## Initialization and updates
+
+By default, when you include the JS file, the module will look for all the anchor elements in your HTML, and add this custom behavior to the ones that have the ```data-browser-*``` attributes.
+
+If you want to trigger this process again, you have to make a JS call:
+
+```javascript
+  window.lbValidation.prepareLinks();
+```
+
 ## Author
 
 @luispablo
