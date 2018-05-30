@@ -1,0 +1,25 @@
+{
+  "name": "link-browser-validation",
+  "version": "1.0.0",
+  "description": "Lightweight and no dependency module to Add browser validation to HTML anchor elements, via data attributes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luispablo/link-browser-validation.git"
+  },
+  "keywords": [
+    "browser",
+    "validation",
+    "anchor",
+    "link"
+  ],
+  "author": "@luispablo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luispablo/link-browser-validation/issues"
+  },
+  "homepage": "https://github.com/luispablo/link-browser-validation#readme"
+}
