@@ -5,12 +5,19 @@
   var DEFAULT_WARN_MSG = "WARNING: Your browser is not supported";
   var DEFAULT_CONFIRM_MSG = "WARNING: Your browser is not supported. Continue anyway?";
 
+  // From https://stackoverflow.com/questions/17907445/how-to-detect-ie11
+  var isMSIE11 = function isMSIE11 () {
+    return !(window.ActiveXObject) && "ActiveXObject" in window;
+  };
+
   var detectBrowser = function detectBrowser () {
+    if (isMSIE11()) return "MSIE";
+
     var i;
     var userAgent = window.navigator.userAgent;
     for (i = 0; i < BROWSERS.length && userAgent.indexOf(BROWSERS[i]) === -1; i++);
     return BROWSERS[i];
-  }
+  };
 
   var isBrowserInList = function isBrowserInList (currentBrowserKey, browsersList) {
     var i;
