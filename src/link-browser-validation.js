@@ -60,13 +60,13 @@
         link.addEventListener("click", function (event) {
           event.preventDefault();
           customMessage = this.getAttribute("data-browser-msg") || DEFAULT_WARN_MSG;
-          handlers.doWarn(customMessage, continueToDestination(link.href, link.target === "_blank"));
+          handlers.doWarn(customMessage, continueToDestination(this.href, this.target === "_blank"));
         });
       } else if (confirmBrowsers && isBrowserInList(currentBrowserKey, confirmBrowsers)) {
         link.addEventListener("click", function (event) {
           event.preventDefault();
           customMessage = this.getAttribute("data-browser-msg") || DEFAULT_CONFIRM_MSG;
-          handlers.doConfirm(customMessage, continueToDestination(link.href, link.target === "_blank"));
+          handlers.doConfirm(customMessage, continueToDestination(this.href, this.target === "_blank"));
         });
       }
     }
